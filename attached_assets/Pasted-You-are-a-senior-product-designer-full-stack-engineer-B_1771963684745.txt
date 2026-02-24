@@ -1,0 +1,318 @@
+You are a senior product designer + full-stack engineer. Build a modern, fast, mobile-first marketing website for my private soccer coaching business in Brooklyn, NY, primarily targeting parents of youth players (with a secondary audience of teen players). The site must feel high-trust: calm, clear, professional, warm, not salesy.
+
+Primary goal
+
+Convert parents into action via two CTAs:
+
+Book a Session
+
+Schedule a Call
+
+Secondary goals
+
+Build trust fast (credentials + testimonials + philosophy + what parents can expect)
+
+Explain services (1-on-1 + small group)
+
+Make it easy to contact me and understand logistics (Brooklyn, fields, ages, what to bring)
+
+Local SEO (Brooklyn private soccer training, youth soccer coach Brooklyn, etc.)
+
+Audience + Messaging Priorities
+
+Write primarily to parents:
+
+They care about: confidence, consistency, communication, safety, values, measurable progress, and their kid enjoying the game.
+
+They want to know: “Will my child improve?”, “Will they feel supported?”, “Is this coach reliable and thoughtful?”, “What does a session look like?”, “How do we get started?”
+
+Tone: direct, reassuring, competent. Avoid hype. Avoid “guarantees.” Make promises about process and standards, not outcomes.
+
+Who I am (use this context)
+
+Name: Ian Pollock
+Location: Brooklyn, NY
+Offer: private soccer coaching for youth players (all ages welcome), 1-on-1 and small group training.
+
+Positioning:
+
+I’m a highly experienced youth coach known for being positive, present, encouraging, and development-focused.
+
+My coaching philosophy is inquiry-based: I help players learn to make decisions, solve problems, and grow their confidence through clarity and repetition.
+
+I balance positive reinforcement + constructive feedback. I meet players where they are, then push them forward.
+
+I emphasize technical execution + game understanding + confidence and translating training into game performance.
+
+Credentials (include all)
+
+Create a “Credentials & Safety” section near the top (after the hero or after testimonials).
+Make credentials editable in a single config file / data object so I can easily update them.
+
+Use a structured list with placeholders (do not invent credentials beyond what I explicitly confirm), but include a default set that I can toggle on/off:
+
+US Soccer / USSF Coaching License: (placeholder: “C License” or “D License” etc.)
+
+SafeSport Certified (toggle)
+
+Background Check (toggle)
+
+CPR / First Aid (toggle)
+
+Concussion Awareness / Head Injury Training (toggle)
+
+Coaching experience: (years placeholder)
+
+Competitive playing background: (optional placeholder)
+
+Add a note: “If you have questions about credentials or fit, schedule a quick call.”
+
+Implementation requirement: credentials must live in data/credentials.ts (or similar) as an array of objects with label, status, details, enabled.
+
+Expected outcomes (state clearly, parent-friendly)
+
+Create a section: “What parents can expect” and “What players feel”.
+
+Parents can expect:
+
+Clear plan and feedback (what we’re working on + why)
+
+Noticeable confidence growth (trying new things, less hesitation)
+
+Better technical fundamentals (first touch, dribbling, passing, finishing)
+
+Smarter decisions in games (scanning, composure, speed of play)
+
+A coach who communicates consistently and shows up
+
+Players feel:
+
+More confident on the ball
+
+Clearer in games (“I know what to do next”)
+
+Proud of measurable progress
+
+Avoid guarantees; use language like “most players experience…” and “you should expect…”
+
+Testimonials (use these themes and quotes)
+
+Create a parent-trust-heavy Testimonials section with:
+
+One featured testimonial near top (“Hire him immediately and don’t turn back.”)
+
+A grid/slider with at least 8
+
+Use these real themes and representative quotes/paraphrases (rewrite lightly for polish, keep meaning):
+
+“Wonderful… taught her a ton… always positive and present.”
+
+“Always excited for games and practices… developed a ton in skill and confidence.”
+
+“Confidence and love for the game started last season under Ian.”
+
+“Consistent communication with parents… identified positives/negatives each game and kept the kids focused on improving.”
+
+“Goes the extra mile… showed up to support players outside soccer.”
+
+“Hire him immediately and don’t turn back.”
+
+“You’d be lucky to have him!”
+
+“100% hire him… positive, knowledgeable, goes the extra mile.”
+
+“Great combination of intellect and soccer experience… mentor.”
+
+Implementation requirement: testimonials in data/testimonials.ts as an array with name, relationship (Parent), quote, highlightTag.
+
+Site structure (pages/sections)
+
+Either multi-page or single-page with anchor navigation. Must have these:
+
+Home
+
+Hero:
+
+Headline aimed at parents, local + outcome-based, e.g.
+
+“Private Soccer Training in Brooklyn — Confidence, Technique, Game IQ”
+
+Subheadline: parent-centric: development, confidence, game transfer, enjoyment
+
+CTAs: Book a Session and Schedule a Call
+
+Trust row: Brooklyn-based • Youth-focused • 1:1 + Small Groups • Credentials badges
+
+Immediately after hero: a short “Why parents choose Ian” section (3–4 cards):
+
+Calm, positive coaching
+
+Clear communication with parents
+
+Confidence + decision-making
+
+Game-realistic training
+
+Add a “How it Works” 3-step section:
+
+Quick assessment (goals + baseline)
+
+Training plan (skills + game habits)
+
+Progress loop (repeat + measure)
+
+Services
+
+Two cards:
+
+1-on-1 Private Training
+
+Personalized plan, high reps, game-like decisions
+
+Best for: confidence, rapid skill building, position-specific needs, tryout prep
+
+Include examples of focus areas (first touch, dribbling under pressure, weak foot, finishing, scanning)
+
+Small Group Training (2–6 players)
+
+More competition, realism, reps, and decision-making
+
+Best for: teammates/friends, confidence in game chaos, passing combinations, 2v1/2v2/3v3
+
+Add a “Not sure what’s best?” CTA leading to Schedule a Call.
+
+Pricing: keep as “inquire” by default.
+
+“Pricing varies by format and location — book a call and I’ll recommend the best setup.”
+(Include optional commented-out pricing table structure for future.)
+
+About / Philosophy
+
+Write as parent-friendly story, not a resume.
+Include a headline like:
+
+“A coach who builds confident players — and keeps the joy in the game.”
+
+Include:
+
+Inquiry-based coaching: players learn to think, not just follow instructions
+
+Balance encouragement + high standards
+
+Emphasis on translating skills into games
+
+Add: “What a session looks like” bullets:
+
+Warm-up + ball mastery
+
+Skill work with constraints
+
+Game-like scenarios
+
+Quick recap + next steps
+
+Testimonials
+
+As described.
+
+FAQ (parent-focused)
+
+Include:
+
+Ages I train (all ages; emphasize youth)
+
+Where sessions happen (Brooklyn fields; placeholders)
+
+Weather/rain policy
+
+What to bring
+
+How often should we train?
+
+Does my child need to be “advanced”?
+
+Can you help with tryouts?
+
+Cancellation policy
+
+Contact / Booking
+
+Two huge CTA buttons again:
+
+Book a Session (external link)
+
+Schedule a Call (external link)
+
+Add contact form:
+
+Parent name
+
+Child age
+
+Current team/level (optional)
+
+Goals (dropdown + free text)
+
+Availability
+
+Preferred location
+
+Design + UX requirements
+
+Clean, modern, minimal, lots of whitespace
+
+Strong typography and scannability
+
+Subtle soccer design touches (pitch line texture) but tasteful
+
+Sticky header with anchors
+
+Mobile persistent bottom bar: Book + Call
+
+Add credibility accents: credentials badges, testimonial pull-quotes
+
+Include a “Parents notice the difference” band with one quote snippet
+
+Technical implementation requirements
+
+Next.js (App Router) + TypeScript + Tailwind
+
+Optional shadcn/ui for components
+
+SEO:
+
+Titles + meta descriptions per page
+
+OpenGraph tags
+
+Local SEO copy blocks (Brooklyn, youth soccer training)
+
+JSON-LD LocalBusiness schema with placeholders
+
+Performance:
+
+next/image, lazy loading
+
+Analytics placeholder (Plausible or GA)
+
+CTAs configurable via env vars:
+
+NEXT_PUBLIC_BOOKING_URL
+
+NEXT_PUBLIC_CALL_URL
+
+Put all content in data/ files so it’s easy for me to edit without touching components.
+
+Deliverables
+
+Working website in Replit
+
+README explaining:
+
+where to edit booking/call links
+
+where to edit credentials/testimonials/services copy
+
+how to deploy
+
+Clean folder structure and readable code
