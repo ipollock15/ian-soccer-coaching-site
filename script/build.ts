@@ -1,64 +1,33 @@
-import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
-
-// server deps to bundle to reduce openat(2) syscalls
-// which helps cold start times
-const allowlist = [
-  "@google/generative-ai",
-  "axios",
-  "connect-pg-simple",
-  "cors",
-  "date-fns",
-  "drizzle-orm",
-  "drizzle-zod",
-  "express",
-  "express-rate-limit",
-  "express-session",
-  "jsonwebtoken",
-  "memorystore",
-  "multer",
-  "nanoid",
-  "nodemailer",
-  "openai",
-  "passport",
-  "passport-local",
-  "pg",
-  "stripe",
-  "uuid",
-  "ws",
-  "xlsx",
-  "zod",
-  "zod-validation-error",
-];
+import { rm, readdir, rename, lstat, unlink } from "fs/promises";
+import { join, resolve } from "path";
 
 async function buildAll() {
-  await rm("dist", { recursive: true, force: true });
+  const root = resolve();
+  const distDir = join(root, "dist");
+  const publicDir = join(distDir, "public");
+
+  await rm(distDir, { recursive: true, force: true });
 
   console.log("building client...");
   await viteBuild();
 
-  console.log("building server...");
-  const pkg = JSON.parse(await readFile("package.json", "utf-8"));
-  const allDeps = [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.devDependencies || {}),
-  ];
-  const externals = allDeps.filter((dep) => !allowlist.includes(dep));
-
-  await esbuild({
-    entryPoints: ["server/index.ts"],
-    platform: "node",
-    bundle: true,
-    format: "cjs",
-    outfile: "dist/index.cjs",
-    define: {
-      "process.env.NODE_ENV": '"production"',
-    },
-    minify: true,
-    external: externals,
-    logLevel: "info",
-  });
+  if (await lstat(publicDir).catch(() => null)) {
+    console.log("Moving files to root dist folder...");
+    const files = await readdir(publicDir);
+    for (const file of files) {
+      const oldPath = join(publicDir, file);
+      const newPath = join(distDir, file);
+      
+      if (await lstat(newPath).catch(() => null)) {
+        await rm(newPath, { recursive: true, force: true });
+      }
+      await rename(oldPath, newPath);
+    }
+    await rm(publicDir, { recursive: true, force: true });
+  }
+  
+  console.log("Build complete! Static files are in /dist");
 }
 
 buildAll().catch((err) => {
