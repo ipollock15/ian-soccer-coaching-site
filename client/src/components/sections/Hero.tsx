@@ -10,7 +10,7 @@ export function Hero() {
             Brooklyn, NY • Youth-focused • 1:1 & Small Groups
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-foreground leading-[1.1]">
-            Private Soccer Training in Brooklyn — <span className="text-primary">Confidence, Technique, Game IQ</span>
+            Private Soccer Training in Brooklyn <span className="text-primary">Confidence, Technique, Game IQ</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Helping youth players develop the technical foundation, in-game decision making, and confidence to translate training into game performance.
