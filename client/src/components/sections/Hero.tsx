@@ -3,7 +3,7 @@ import heroImg from "@/assets/images/hero.jpg";
 
 export function Hero() {
   return (
-    <section className="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+    <section className="relative pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden">
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         <div className="max-w-2xl">
           <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary/10 text-primary mb-6">
