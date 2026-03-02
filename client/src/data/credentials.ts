@@ -11,6 +11,5 @@ export const credentials: Credential[] = [
   { label: "Background Check", status: "Cleared", details: "Annual comprehensive check", enabled: true },
   { label: "CPR / First Aid", status: "Certified", details: "American Red Cross", enabled: true },
   { label: "Concussion Awareness", status: "Certified", details: "Heads Up training completed", enabled: true },
-  { label: "Coaching Experience", status: "10+ Years", details: "Working with youth to advanced players", enabled: true },
-  { label: "Competitive Playing Background", status: "Collegiate", details: "Former collegiate athlete", enabled: true }
+  { label: "Coaching Experience", status: "6+ Years", details: "Working with youth to advanced players", enabled: true }
 ];
