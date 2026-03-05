@@ -20,36 +20,19 @@ export function Hero() {
             "Hire him immediately and don't turn back. He is the type of coach and man that you build clubs with." — Blaine & Kristen Herman
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-
-              href={siteConfig.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-[1.02] w-full sm:w-auto"
-            >
+            <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-[1.02] w-full sm:w-auto">
               Book a Free Intro Call
             </a>
-
-              href={siteConfig.callUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-base font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground w-full sm:w-auto"
-            >
+            <a href={siteConfig.callUrl} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-8 text-base font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground w-full sm:w-auto">
               Learn More
             </a>
           </div>
-          {/* Trust bar */}
           <div className="flex flex-wrap gap-6 mt-8 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">⚽ 6+ Years Coaching</span>
-            <span className="flex items-center gap-2">✅ USSF Licensed</span>
-            <span className="flex items-center gap-2">🛡️ Background Checked</span>
-            <span className="flex items-center gap-2">⭐ 5-Star Rated</span>
+            <span>⚽ 6+ Years Coaching</span>
+            <span>✅ USSF Licensed</span>
+            <span>🛡️ Background Checked</span>
+            <span>⭐ 5-Star Rated</span>
           </div>
         </div>
         <div className="relative aspect-[4/3] md:aspect-square rounded-3xl overflow-hidden shadow-2xl ring-1 ring-border/50">
-          <img src={heroImg} alt="Coach Ian training a youth soccer player" className="object-cover w-full h-full" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        </div>
-      </div>
-    </section>
-  );
-}
+          <img src={heroImg} alt="Coac
