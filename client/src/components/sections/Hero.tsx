@@ -7,14 +7,15 @@ export function Hero() {
       <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         <div className="max-w-2xl">
           <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary/10 text-primary mb-6">
-            Brooklyn, NY • Youth-focused • 1:1 & Small Groups
+            Brooklyn, NY • Ages 5–18 • 1:1 & Small Groups
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-foreground leading-[1.1]">
             Private Soccer Training in Brooklyn <span className="text-primary">Confidence, Technique, Game IQ</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Helping youth players develop the technical foundation, in-game decision making, and confidence to translate training into game performance.
+            Private soccer training in Brooklyn that builds real confidence, sharper fundamentals, and smarter decision-making — so players show up differently on game day.
           </p>
+          <p className="text-base text-muted-foreground/80 italic mb-8 border-l-2 border-primary/40 pl-4">"Hire him immediately and don't turn back. He is the type of coach and man that you build clubs with." — Blaine & Kristen H.</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-[1.02] w-full sm:w-auto">
               Book a Session
@@ -29,6 +30,7 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
       </div>
+      <div className="flex flex-wrap gap-6 mt-8 text-sm text-muted-foreground"><span>⚽ 6+ Years Coaching</span><span>✅ USSF C License</span><span>🛡️ Background-Checked</span><span>➕ CPR + First Aid Certified</span></div>
     </section>
   );
 }
