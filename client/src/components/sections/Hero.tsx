@@ -15,7 +15,7 @@ export function Hero() {
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Private soccer training in Brooklyn that builds real confidence, sharper fundamentals, and smarter decision-making — so players show up differently on game day.
           </p>
-          <p className="text-base text-muted-foreground/80 italic mb-8 border-l-2 border-primary/40 pl-4">"Hire him immediately and don't turn back. He is the type of coach and man that you build clubs with." — Blaine & Kristen H.</p>
+          <p className="text-base text-muted-foreground/80 italic mb-8 border-l-2 border-primary/40 pl-4">"Hire him immediately and don't turn back. He is the type of coach that you build clubs with." — Blaine & Kristen H.</p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-[1.02] w-full sm:w-auto">
               Book a Session
