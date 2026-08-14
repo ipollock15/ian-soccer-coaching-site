@@ -47,13 +47,51 @@ export function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you shortly to set up our consultation.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const [emailResponse, sheetResponse] = await Promise.all([
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "a2251641-1c22-46d2-9709-b36caeae8940",
+            subject: `New inquiry from ${values.parentName}`,
+            ...values,
+          }),
+        }),
+        fetch("https://sheetdb.io/api/v1/201g30b1dulfc", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            data: {
+              ...values,
+              timestamp: new Date().toLocaleString(),
+            },
+          }),
+        }),
+      ]);
+
+      const emailResult = await emailResponse.json();
+
+      if (emailResult.success) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out. I'll get back to you shortly to set up our consultation.",
+        });
+        form.reset();
+      } else {
+        throw new Error(emailResult.message || "Submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email me directly if this keeps happening.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
