@@ -60,28 +60,29 @@ export function Contact() {
             access_key: "a2251641-1c22-46d2-9709-b36caeae8940",
             subject: `New inquiry from ${values.parentName}`,
             from_name: "Coach Ian Soccer",
+            replyto: values.email,
             ...values,
           }),
         }),
         fetch("https://sheetdb.io/api/v1/201g30b1dulfc", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          fetch("https://sheetdb.io/api/v1/201g30b1dulfc", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              data: [
-                {
-                  ...values,
-                  timestamp: new Date().toLocaleString(),
-                },
-              ],
-            }),
+          body: JSON.stringify({
+            data: [
+              {
+                ...values,
+                timestamp: new Date().toLocaleString(),
+              },
+            ],
           }),
         }),
       ]);
 
       const emailResult = await emailResponse.json();
+
+      if (!sheetResponse.ok) {
+        console.error("SheetDB error:", await sheetResponse.text());
+      }
 
       if (emailResult.success) {
         toast({
