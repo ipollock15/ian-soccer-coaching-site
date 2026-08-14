@@ -59,6 +59,7 @@ export function Contact() {
           body: JSON.stringify({
             access_key: "a2251641-1c22-46d2-9709-b36caeae8940",
             subject: `New inquiry from ${values.parentName}`,
+            from_name: "Coach Ian Soccer",
             ...values,
           }),
         }),
